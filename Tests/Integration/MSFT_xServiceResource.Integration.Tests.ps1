@@ -121,7 +121,7 @@ try
                 {
                     . $script:configurationAllExceptCredentialFilePath -ConfigurationName $configurationName
                     & $configurationName -OutputPath $TestDrive @resourceParameters
-                    Start-DscConfiguration -Path $TestDrive -ErrorAction 'Stop' -Wait -Force
+                    Start-DscConfiguration -Path $TestDrive -ErrorAction Stop -Wait -Force -WarningAction SilentlyContinue
                 } | Should -Not -Throw
             }
 
@@ -184,7 +184,7 @@ try
                 {
                     . $script:configurationAllExceptCredentialFilePath -ConfigurationName $configurationName
                     & $configurationName -OutputPath $TestDrive @resourceParameters
-                    Start-DscConfiguration -Path $TestDrive -ErrorAction 'Stop' -Wait -Force
+                    Start-DscConfiguration -Path $TestDrive -ErrorAction Stop -Wait -Force -WarningAction SilentlyContinue
                 } | Should -Not -Throw
             }
 
@@ -252,7 +252,7 @@ try
                 {
                     . $script:configurationAllExceptCredentialFilePath -ConfigurationName $configurationName
                     & $configurationName -OutputPath $TestDrive @resourceParameters
-                    Start-DscConfiguration -Path $TestDrive -ErrorAction 'Stop' -Wait -Force
+                    Start-DscConfiguration -Path $TestDrive -ErrorAction Stop -Wait -Force -WarningAction SilentlyContinue
                 } | Should -Not -Throw
             }
 
@@ -302,7 +302,7 @@ try
                 {
                     . $script:configurationCredentialOnlyFilePath -ConfigurationName $configurationName
                     & $configurationName -OutputPath $TestDrive -ConfigurationData $configData @resourceParameters
-                    Start-DscConfiguration -Path $TestDrive -ErrorAction 'Stop' -Wait -Force
+                    Start-DscConfiguration -Path $TestDrive -ErrorAction Stop -Wait -Force -WarningAction SilentlyContinue
                 } | Should -Not -Throw
             }
 
@@ -347,7 +347,7 @@ try
                 {
                     . $script:configurationAllExceptCredentialFilePath -ConfigurationName $configurationName
                     & $configurationName -OutputPath $TestDrive @resourceParameters
-                    Start-DscConfiguration -Path $TestDrive -ErrorAction 'Stop' -Wait -Force
+                    Start-DscConfiguration -Path $TestDrive -ErrorAction Stop -Wait -Force -WarningAction SilentlyContinue
                 } | Should -Not -Throw
             }
 
@@ -385,7 +385,7 @@ try
                 {
                     . $script:configurationAllExceptCredentialFilePath -ConfigurationName $configurationName
                     & $configurationName -OutputPath $TestDrive @resourceParameters
-                    Start-DscConfiguration -Path $TestDrive -ErrorAction 'Stop' -Wait -Force
+                    Start-DscConfiguration -Path $TestDrive -ErrorAction Stop -Wait -Force -WarningAction SilentlyContinue
                 } | Should -Not -Throw
             }
 

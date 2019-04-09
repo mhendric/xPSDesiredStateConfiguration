@@ -42,7 +42,7 @@ try
                 {
                     . $script:confgurationFilePath -ConfigurationName $configurationName
                     & $configurationName -OutputPath $TestDrive @resourceParameters
-                    Start-DscConfiguration -Path $TestDrive -ErrorAction 'Stop' -Wait -Force
+                    Start-DscConfiguration -Path $TestDrive -ErrorAction Stop -Wait -Force -WarningAction SilentlyContinue
                 } | Should -Not -Throw
 
                 $windowsOptionalFeature = Dism\Get-WindowsOptionalFeature -FeatureName $resourceParameters.Name -Online
@@ -91,7 +91,7 @@ try
                 {
                     . $script:confgurationFilePath -ConfigurationName $configurationName
                     & $configurationName -OutputPath $TestDrive @resourceParameters
-                    Start-DscConfiguration -Path $TestDrive -ErrorAction 'Stop' -Wait -Force
+                    Start-DscConfiguration -Path $TestDrive -ErrorAction Stop -Wait -Force -WarningAction SilentlyContinue
                 } | Should -Not -Throw
 
                 $windowsOptionalFeature = Dism\Get-WindowsOptionalFeature -FeatureName $resourceParameters.Name -Online
@@ -134,7 +134,7 @@ try
                 {
                     . $script:confgurationFilePath -ConfigurationName $configurationName
                     & $configurationName -OutputPath $TestDrive @resourceParameters
-                    Start-DscConfiguration -Path $TestDrive -ErrorAction 'Stop' -Wait -Force
+                    Start-DscConfiguration -Path $TestDrive -ErrorAction Stop -Wait -Force -WarningAction SilentlyContinue
                 } | Should -Throw "Feature name $($resourceParameters.Name) is unknown."
 
                 Test-Path -Path $resourceParameters.LogPath | Should -Be $true

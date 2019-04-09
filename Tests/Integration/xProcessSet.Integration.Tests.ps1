@@ -73,7 +73,7 @@ try
                 {
                     . $script:configurationFilePath -ConfigurationName $configurationName
                     & $configurationName -OutputPath $TestDrive @processSetParameters
-                    Start-DscConfiguration -Path $TestDrive -ErrorAction 'Stop' -Wait -Force
+                    Start-DscConfiguration -Path $TestDrive -ErrorAction Stop -Wait -Force -WarningAction SilentlyContinue
                 } | Should -Not -Throw
             }
 
@@ -124,7 +124,7 @@ try
                 {
                     . $script:configurationFilePath -ConfigurationName $configurationName
                     & $configurationName -OutputPath $TestDrive @processSetParameters
-                    Start-DscConfiguration -Path $TestDrive -ErrorAction 'Stop' -Wait -Force
+                    Start-DscConfiguration -Path $TestDrive -ErrorAction Stop -Wait -Force -WarningAction SilentlyContinue
                 } | Should -Not -Throw
             }
 

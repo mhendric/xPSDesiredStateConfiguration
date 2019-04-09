@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- Suppresses the following Warnings throughout Integration Tests:
+  The 'Microsoft.PowerShell.Management' module was not imported because the
+  'Microsoft.PowerShell.Management' snap-in was already imported.
 - MSFT_xWindowsProcess:
   - Fixes issue where a process will fail to be created if a $Path is passed
     that contains one or more spaces, and the resource is using $Credentials.

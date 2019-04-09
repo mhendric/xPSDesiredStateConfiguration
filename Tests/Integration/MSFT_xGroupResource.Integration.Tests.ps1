@@ -68,7 +68,7 @@ try
                 {
                     . $script:confgurationWithMembersFilePath -ConfigurationName $configurationName
                     & $configurationName -OutputPath $TestDrive @resourceParameters
-                    Start-DscConfiguration -Path $TestDrive -ErrorAction 'Stop' -Wait -Force
+                    Start-DscConfiguration -Path $TestDrive -ErrorAction Stop -Wait -Force -WarningAction SilentlyContinue
                 } | Should -Not -Throw
 
                 Test-GroupExists -GroupName $testGroupName -Members @() | Should -Be $true
@@ -96,7 +96,7 @@ try
             {
                 . $script:confgurationNoMembersFilePath -ConfigurationName $configurationName
                 & $configurationName -OutputPath $TestDrive @resourceParameters
-                Start-DscConfiguration -Path $TestDrive -ErrorAction 'Stop' -Wait -Force
+                Start-DscConfiguration -Path $TestDrive -ErrorAction Stop -Wait -Force -WarningAction SilentlyContinue
             } | Should -Not -Throw
 
             Test-GroupExists -GroupName $testGroupName | Should -Be $true
@@ -117,7 +117,7 @@ try
             {
                 . $script:confgurationWithMembersToIncludeExcludeFilePath -ConfigurationName $configurationName
                 & $configurationName -OutputPath $TestDrive @resourceParameters
-                Start-DscConfiguration -Path $TestDrive -ErrorAction 'Stop' -Wait -Force
+                Start-DscConfiguration -Path $TestDrive -ErrorAction Stop -Wait -Force -WarningAction SilentlyContinue
             } | Should -Not -Throw
 
             Test-GroupExists -GroupName $testGroupName -MembersToInclude $testUsername1 | Should -Be $true
@@ -142,7 +142,7 @@ try
                 {
                     . $script:confgurationWithMembersFilePath -ConfigurationName $configurationName
                     & $configurationName -OutputPath $TestDrive @resourceParameters
-                    Start-DscConfiguration -Path $TestDrive -ErrorAction 'Stop' -Wait -Force
+                    Start-DscConfiguration -Path $TestDrive -ErrorAction Stop -Wait -Force -WarningAction SilentlyContinue
                 } | Should -Not -Throw
 
                 Test-GroupExists -GroupName $testGroupName -Members $groupMembers | Should -Be $true
@@ -184,7 +184,7 @@ try
                 {
                     . $script:confgurationWithMembersToIncludeExcludeFilePath -ConfigurationName $configurationName
                     & $configurationName -OutputPath $TestDrive @resourceParameters
-                    Start-DscConfiguration -Path $TestDrive -ErrorAction 'Stop' -Wait -Force
+                    Start-DscConfiguration -Path $TestDrive -ErrorAction Stop -Wait -Force -WarningAction SilentlyContinue
                 } | Should -Not -Throw
 
                 Test-GroupExists -GroupName $testGroupName -MembersToInclude $groupMembers | Should -Be $true
@@ -226,7 +226,7 @@ try
                 {
                     . $script:confgurationWithMembersToIncludeExcludeFilePath -ConfigurationName $configurationName
                     & $configurationName -OutputPath $TestDrive @resourceParameters
-                    Start-DscConfiguration -Path $TestDrive -ErrorAction 'Stop' -Wait -Force
+                    Start-DscConfiguration -Path $TestDrive -ErrorAction Stop -Wait -Force -WarningAction SilentlyContinue
                 } | Should -Not -Throw
 
                 Test-GroupExists -GroupName $testGroupName -MembersToExclude $groupMembersToExclude | Should -Be $true
@@ -260,7 +260,7 @@ try
                 {
                     . $script:confgurationWithMembersFilePath -ConfigurationName $configurationName
                     & $configurationName -OutputPath $TestDrive @resourceParameters
-                    Start-DscConfiguration -Path $TestDrive -ErrorAction 'Stop' -Wait -Force
+                    Start-DscConfiguration -Path $TestDrive -ErrorAction Stop -Wait -Force -WarningAction SilentlyContinue
                 } | Should -Not -Throw
 
                 Test-GroupExists -GroupName $testGroupName | Should -Be $false

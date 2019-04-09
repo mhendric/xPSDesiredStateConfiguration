@@ -105,7 +105,7 @@ Describe 'xMsiPackage End to End Tests' {
             {
                 . $script:configurationFilePathNoOptionalParameters -ConfigurationName $configurationName
                 & $configurationName -OutputPath $TestDrive @msiPackageParameters
-                Start-DscConfiguration -Path $TestDrive -ErrorAction 'Stop' -Wait -Force
+                Start-DscConfiguration -Path $TestDrive -ErrorAction Stop -Wait -Force -WarningAction SilentlyContinue
             } | Should -Not -Throw
         }
 
@@ -150,7 +150,7 @@ Describe 'xMsiPackage End to End Tests' {
             {
                 . $script:configurationFilePathNoOptionalParameters -ConfigurationName $configurationName
                 & $configurationName -OutputPath $TestDrive @msiPackageParameters
-                Start-DscConfiguration -Path $TestDrive -ErrorAction 'Stop' -Wait -Force
+                Start-DscConfiguration -Path $TestDrive -ErrorAction Stop -Wait -Force -WarningAction SilentlyContinue
             } | Should -Not -Throw
         }
 
@@ -195,7 +195,7 @@ Describe 'xMsiPackage End to End Tests' {
             {
                 . $script:configurationFilePathNoOptionalParameters -ConfigurationName $configurationName
                 & $configurationName -OutputPath $TestDrive @msiPackageParameters
-                Start-DscConfiguration -Path $TestDrive -ErrorAction 'Stop' -Wait -Force
+                Start-DscConfiguration -Path $TestDrive -ErrorAction Stop -Wait -Force -WarningAction SilentlyContinue
             } | Should -Not -Throw
         }
 
@@ -240,7 +240,7 @@ Describe 'xMsiPackage End to End Tests' {
             {
                 . $script:configurationFilePathNoOptionalParameters -ConfigurationName $configurationName
                 & $configurationName -OutputPath $TestDrive @msiPackageParameters
-                Start-DscConfiguration -Path $TestDrive -ErrorAction 'Stop' -Wait -Force
+                Start-DscConfiguration -Path $TestDrive -ErrorAction Stop -Wait -Force -WarningAction SilentlyContinue
             } | Should -Not -Throw
         }
 
@@ -293,7 +293,7 @@ Describe 'xMsiPackage End to End Tests' {
             {
                 . $script:configurationFilePathLogPath -ConfigurationName $configurationName
                 & $configurationName -OutputPath $TestDrive @msiPackageParameters
-                Start-DscConfiguration -Path $TestDrive -ErrorAction 'Stop' -Wait -Force
+                Start-DscConfiguration -Path $TestDrive -ErrorAction Stop -Wait -Force -WarningAction SilentlyContinue
             } | Should -Not -Throw
         }
 
@@ -350,7 +350,7 @@ Describe 'xMsiPackage End to End Tests' {
             {
                 . $script:configurationFilePathLogPath -ConfigurationName $configurationName
                 & $configurationName -OutputPath $TestDrive @msiPackageParameters
-                Start-DscConfiguration -Path $TestDrive -ErrorAction 'Stop' -Wait -Force
+                Start-DscConfiguration -Path $TestDrive -ErrorAction Stop -Wait -Force -WarningAction SilentlyContinue
             } | Should -Not -Throw
         }
 
@@ -413,7 +413,7 @@ Describe 'xMsiPackage End to End Tests' {
                 {
                     . $script:configurationFilePathNoOptionalParameters -ConfigurationName $configurationName
                     & $configurationName -OutputPath $TestDrive @msiPackageParameters
-                    Start-DscConfiguration -Path $TestDrive -ErrorAction 'Stop' -Wait -Force
+                    Start-DscConfiguration -Path $TestDrive -ErrorAction Stop -Wait -Force -WarningAction SilentlyContinue
                 } | Should -Not -Throw
             }
         }
@@ -481,7 +481,7 @@ Describe 'xMsiPackage End to End Tests' {
                 {
                     . $script:configurationFilePathNoOptionalParameters -ConfigurationName $configurationName
                     & $configurationName -OutputPath $TestDrive @msiPackageParameters
-                    Start-DscConfiguration -Path $TestDrive -ErrorAction 'Stop' -Wait -Force
+                    Start-DscConfiguration -Path $TestDrive -ErrorAction Stop -Wait -Force -WarningAction SilentlyContinue
                 } | Should -Not -Throw
             }
         }
@@ -549,7 +549,7 @@ Describe 'xMsiPackage End to End Tests' {
                 {
                     . $script:configurationFilePathNoOptionalParameters -ConfigurationName $configurationName
                     & $configurationName -OutputPath $TestDrive @msiPackageParameters
-                    Start-DscConfiguration -Path $TestDrive -ErrorAction 'Stop' -Wait -Force
+                    Start-DscConfiguration -Path $TestDrive -ErrorAction Stop -Wait -Force -WarningAction SilentlyContinue
                 } | Should -Not -Throw
             }
         }
@@ -617,7 +617,7 @@ Describe 'xMsiPackage End to End Tests' {
                 {
                     . $script:configurationFilePathNoOptionalParameters -ConfigurationName $configurationName
                     & $configurationName -OutputPath $TestDrive @msiPackageParameters
-                    Start-DscConfiguration -Path $TestDrive -ErrorAction 'Stop' -Wait -Force
+                    Start-DscConfiguration -Path $TestDrive -ErrorAction Stop -Wait -Force -WarningAction SilentlyContinue
                 } | Should -Not -Throw
             }
         }

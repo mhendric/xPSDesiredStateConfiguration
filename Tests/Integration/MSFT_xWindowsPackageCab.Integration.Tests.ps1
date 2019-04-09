@@ -77,7 +77,7 @@ try
             {
                 . $script:confgurationFilePath -ConfigurationName $configurationName
                 & $configurationName -OutputPath $TestDrive @resourceParameters
-                Start-DscConfiguration -Path $TestDrive -ErrorAction 'Stop' -Wait -Force
+                Start-DscConfiguration -Path $TestDrive -ErrorAction Stop -Wait -Force -WarningAction SilentlyContinue
             } | Should -Not -Throw
 
             { $null = Dism\Get-WindowsPackage -PackageName $resourceParameters.Name -Online } | Should -Not -Throw
@@ -103,7 +103,7 @@ try
             {
                 . $script:confgurationFilePath -ConfigurationName $configurationName
                 & $configurationName -OutputPath $TestDrive @resourceParameters
-                Start-DscConfiguration -Path $TestDrive -ErrorAction 'Stop' -Wait -Force
+                Start-DscConfiguration -Path $TestDrive -ErrorAction Stop -Wait -Force -WarningAction SilentlyContinue
             } | Should -Not -Throw
 
             { $null = Dism\Get-WindowsPackage -PackageName $resourceParameters.Name -Online } | Should -Throw
@@ -124,7 +124,7 @@ try
             {
                 . $script:confgurationFilePath -ConfigurationName $configurationName
                 & $configurationName -OutputPath $TestDrive @resourceParameters
-                Start-DscConfiguration -Path $TestDrive -ErrorAction 'Stop' -Wait -Force
+                Start-DscConfiguration -Path $TestDrive -ErrorAction Stop -Wait -Force -WarningAction SilentlyContinue
             } | Should -Throw
 
             Test-Path -Path $resourceParameters.LogPath | Should -Be $true

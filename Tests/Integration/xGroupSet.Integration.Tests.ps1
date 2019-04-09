@@ -72,7 +72,7 @@ try
                 {
                     . $script:confgurationFilePath -ConfigurationName $configurationName
                     & $configurationName -OutputPath $TestDrive @groupSetParameters
-                    Start-DscConfiguration -Path $TestDrive -ErrorAction 'Stop' -Wait -Force
+                    Start-DscConfiguration -Path $TestDrive -ErrorAction Stop -Wait -Force -WarningAction SilentlyContinue
                 } | Should -Not -Throw
 
                 Test-GroupExists -GroupName $testGroupName1 -Members @() | Should -Be $true
@@ -111,7 +111,7 @@ try
                 {
                     . $script:confgurationFilePath -ConfigurationName $configurationName
                     & $configurationName -OutputPath $TestDrive @groupSetParameters
-                    Start-DscConfiguration -Path $TestDrive -ErrorAction 'Stop' -Wait -Force
+                    Start-DscConfiguration -Path $TestDrive -ErrorAction Stop -Wait -Force -WarningAction SilentlyContinue
                 } | Should -Not -Throw
 
                 Test-GroupExists -GroupName $testGroupName1 -MembersToInclude $groupMembers | Should -Be $true
@@ -147,7 +147,7 @@ try
                 {
                     . $script:confgurationFilePath -ConfigurationName $configurationName
                     & $configurationName -OutputPath $TestDrive @groupSetParameters
-                    Start-DscConfiguration -Path $TestDrive -ErrorAction 'Stop' -Wait -Force
+                    Start-DscConfiguration -Path $TestDrive -ErrorAction Stop -Wait -Force -WarningAction SilentlyContinue
                 } | Should -Not -Throw
 
                 Test-GroupExists -GroupName $testGroupName -MembersToInclude $groupMembers | Should -Be $true
@@ -189,7 +189,7 @@ try
                 {
                     . $script:confgurationFilePath -ConfigurationName $configurationName
                     & $configurationName -OutputPath $TestDrive @groupSetParameters
-                    Start-DscConfiguration -Path $TestDrive -ErrorAction 'Stop' -Wait -Force
+                    Start-DscConfiguration -Path $TestDrive -ErrorAction Stop -Wait -Force -WarningAction SilentlyContinue
                 } | Should -Not -Throw
 
                 foreach ($testGroupName in $testGroupNames)
@@ -234,7 +234,7 @@ try
                 {
                     . $script:confgurationFilePath -ConfigurationName $configurationName
                     & $configurationName -OutputPath $TestDrive @groupSetParameters
-                    Start-DscConfiguration -Path $TestDrive -ErrorAction 'Stop' -Wait -Force
+                    Start-DscConfiguration -Path $TestDrive -ErrorAction Stop -Wait -Force -WarningAction SilentlyContinue
                 } | Should -Not -Throw
 
                 foreach ($testGroupName in $testGroupNames)
